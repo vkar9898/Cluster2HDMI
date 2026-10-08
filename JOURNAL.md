@@ -23,7 +23,7 @@ After cutting notches, the FFC sat nicely in the breakout board, but then I ran 
 
 # October 8: LCD works! But after a lot of tries
 
-First, I began the day with continuity checking the cluster's FFC, and I couldn't believe my eyes. The pins perfectly matched the panel's FFC, which was very happy news. It was my initial logic analysing that had been off! With this newfound knowledge, I got the Pico 2 wired to the LCD, with the cluster supplying its 10-pin connector, and some 3.3V pins on the 45-pin connector.
+First, I began the day with continuity checking the cluster's FFC, and I couldn't believe my eyes. The pins perfectly matched the panel's FFC, which was very happy news. It was my initial logic analysing that had been off! With this newfound knowledge, I got the Pico 2 wired to the LCD, with the cluster supplying its 10-pin connector, and supplying power pins 4 and 38 through the cluster pins 4 and 38.
 
 Here I ran into a problem. Screen turns on, backlight is on, but no colour. Nothing at all, the screen was entirely black. I was shocked, I believed I did everything right!
 
