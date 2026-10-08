@@ -154,7 +154,7 @@ Currently, the Pico code is MicroPython, written and run through Thonny. It gene
 ## How to flash
 
 1. Holding BOOTSEL, plug in your Pico, and drag the [MicroPython .uf2 file](https://micropython.org/download/RPI_PICO2/) onto the drive that appears.
-2. Open Thonny and choose the Pico as the interpreter, before saving the [firmware](Firmware) file onto the Pico. After this, it'll run automatically on power-up. 
+2. Open Thonny and choose the Pico as the interpreter, before saving the [firmware](Firmware) file onto the Pico as "main.py". After this, it'll run automatically on power-up. 
 3. Turn on the cluster first, then turn on the Pico. You are done!
 
 ## Known issues
@@ -173,16 +173,12 @@ Coming once the PCB is finished.
 
 ## Bill of materials
 
-## Bill of materials
-
 | Part | Qty | Est. cost (AUD) | Link | Description |
 |---|---|---|---|---|
 | **Main parts** | | | | |
 | Adafruit TFP401 HDMI/DVI decoder (no touch) | 1 | 55 | [Adafruit](https://www.adafruit.com/product/2219) | Converts HDMI to 24-bit parallel RGB |
 | PCB fabrication + assembly of FPC connectors | 1 order | 30–50 | [JLCPCB](https://jlcpcb.com) | Custom adapter/driver board |
-| Raspberry Pi Pico 2 | 1 | [price] (owned) | [Raspberry Pi](https://www.raspberrypi.com/products/raspberry-pi-pico-2/) | SPI setup commands + backlight control |
-| 12 V power supply | 1 | [price] (owned) | [link] | Main power input |
-| Audi Q7 cluster LCD panel | 1 | [price] (owned) | | 7" 800×480 panel from the cluster |
+| 12 V power supply | 1 | 33 | [Amazon](https://www.amazon.com.au/ALITOVE-100-240V-Adapter-Converter-Transformer/dp/B0CRGJ15HS?dib=eyJ2IjoiMSJ9.eKabnVVIa0q-DX3REQbsojDxqqB-5w-zSrwOWo3U6fiqwDxCRXsnyH3o0D0AUvdvHMf7U6qCBYaxl1SWTk4_mrZqnneZbxiWTrrbT9mlzaAJOwvs9rEdPBoPdXVdqckfKL3ovnGVmwBkR6Q1ZBFYnQD8FWWc_vQM63Xy28kxPx4N4LmAD1BE7nzJLL1ZdNAQMFcVLGf0cMx4-S2ySBia_gUx-WC5yktBHQC7l6ZeOmIhtHxc7FMqnp87zBmPecEE23GLf5gHkoRxBgtD_DH7Ml_h-fndnVOwpL82pTpOtak.p1PiSraUS4ZWkSUwEAAan182vMakDWFKRBTpYwNCir4&) | Main power input |
 | **Connectors** | | | | |
 | Hirose FH34SRJ-45S-0.5SH 45-pin FPC connector | 2 | 5 | [LCSC C3170034](https://www.lcsc.com/product-detail/C3170034.html) | Panel connector |
 | XUNPU FPC-05FB-40PH20 40-pin FPC connector | 2 | 5 | [LCSC C2856837](https://www.lcsc.com/product-detail/C2856837.html) | TFP401 ribbon connector |
@@ -220,8 +216,6 @@ Coming once the PCB is finished.
 | Green 0805 LED | 1 | <1 | [LCSC C2297](https://www.lcsc.com/product-detail/C2297.html) | Power indicator |
 | 1 kΩ 1% 0805 resistor | 1 | <1 | [LCSC C17513](https://www.lcsc.com/product-detail/C17513.html) | LED current limit |
 | **Total** | | **~120–145** (excl. owned parts and shipping) | | |
-
-Also available as [bom.csv](bom.csv).
 
 ## Credits & references
 
