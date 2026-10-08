@@ -2,6 +2,8 @@ Part,Qty,Est. cost (AUD),Link,Description
 Adafruit TFP401 HDMI/DVI decoder (no touch),1,55,https://www.adafruit.com/product/2219,Converts HDMI to 24-bit parallel RGB
 PCB fabrication + assembly of FPC connectors,1 order,30-50,https://jlcpcb.com,Custom adapter/driver board
 12 V power supply,1,33,https://www.amazon.com.au/dp/B0CRGJ15HS,Main power input
+Raspberry Pi Pico 2,1,owned,https://www.raspberrypi.com/products/raspberry-pi-pico-2/,SPI setup commands + backlight control
+Audi Q7 4M0 920 781 A instrument cluster,1,owned,https://www.ebay.co.uk/itm/177800811902,"Source of the 7"" 800×480 LCD panel"
 Hirose FH34SRJ-45S-0.5SH 45-pin FPC connector,2,5,https://www.lcsc.com/product-detail/C3170034.html,Panel connector
 XUNPU FPC-05FB-40PH20 40-pin FPC connector,2,5,https://www.lcsc.com/product-detail/C2856837.html,TFP401 ribbon connector
 "40-pin 0.5 mm FFC cable, 100 mm, type A",1,5,https://www.lcsc.com/product-detail/C2859463.html,TFP401 board to PCB
@@ -30,4 +32,4 @@ AO3400A MOSFET,1,1,https://www.lcsc.com/product-detail/C20917.html,PWM dimming (
 33 Ω 1% 0805 resistor,1,<1,https://www.lcsc.com/product-detail/C17634.html,PCLK series resistor
 Green 0805 LED,1,<1,https://www.lcsc.com/product-detail/C2297.html,Power indicator
 1 kΩ 1% 0805 resistor,1,<1,https://www.lcsc.com/product-detail/C17513.html,LED current limit
-TOTAL,,~150-175 (excl. shipping),,
+TOTAL,,~150-175 (excl. owned parts and shipping),,
