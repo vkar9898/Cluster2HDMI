@@ -28,7 +28,7 @@
 #   GP22 -> 40  SPI data
 #   GP26 -> 41  SPI chip select
 #   GP3..GP20 -> data labels, see DATA below
-#   2.2k to ground on: A3 (as before), A5, A6, A14, A15, A23, A24
+#   1k to ground on: A3 2.2k to A5, A6, A14, A15, A23, A24
 #   GND  -> ground rail
 # Power order: cluster ON first, then plug in the Pico and press Run.
 # ---------------------------------------------------------------
