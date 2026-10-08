@@ -178,7 +178,9 @@ Coming once the PCB is finished.
 | **Main parts** | | | | |
 | Adafruit TFP401 HDMI/DVI decoder (no touch) | 1 | 55 | [Adafruit](https://www.adafruit.com/product/2219) | Converts HDMI to 24-bit parallel RGB |
 | PCB fabrication + assembly of FPC connectors | 1 order | 30–50 | [JLCPCB](https://jlcpcb.com) | Custom adapter/driver board |
-| 12 V power supply | 1 | 33 | [Amazon](https://www.amazon.com.au/ALITOVE-100-240V-Adapter-Converter-Transformer/dp/B0CRGJ15HS?dib=eyJ2IjoiMSJ9.eKabnVVIa0q-DX3REQbsojDxqqB-5w-zSrwOWo3U6fiqwDxCRXsnyH3o0D0AUvdvHMf7U6qCBYaxl1SWTk4_mrZqnneZbxiWTrrbT9mlzaAJOwvs9rEdPBoPdXVdqckfKL3ovnGVmwBkR6Q1ZBFYnQD8FWWc_vQM63Xy28kxPx4N4LmAD1BE7nzJLL1ZdNAQMFcVLGf0cMx4-S2ySBia_gUx-WC5yktBHQC7l6ZeOmIhtHxc7FMqnp87zBmPecEE23GLf5gHkoRxBgtD_DH7Ml_h-fndnVOwpL82pTpOtak.p1PiSraUS4ZWkSUwEAAan182vMakDWFKRBTpYwNCir4&) | Main power input |
+| 12 V power supply | 1 | 33 | [Amazon](https://www.amazon.com.au/dp/B0CRGJ15HS) | Main power input |
+| Raspberry Pi Pico 2 | 1 | owned | [Raspberry Pi](https://www.raspberrypi.com/products/raspberry-pi-pico-2/) | SPI setup commands + backlight control |
+| Audi Q7 4M0 920 781 A instrument cluster | 1 | owned | [eBay](https://www.ebay.co.uk/itm/177800811902) | Source of the 7" 800×480 LCD panel |
 | **Connectors** | | | | |
 | Hirose FH34SRJ-45S-0.5SH 45-pin FPC connector | 2 | 5 | [LCSC C3170034](https://www.lcsc.com/product-detail/C3170034.html) | Panel connector |
 | XUNPU FPC-05FB-40PH20 40-pin FPC connector | 2 | 5 | [LCSC C2856837](https://www.lcsc.com/product-detail/C2856837.html) | TFP401 ribbon connector |
