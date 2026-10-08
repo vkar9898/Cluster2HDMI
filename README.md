@@ -4,7 +4,8 @@ A project dedicated to utilising a 7 inch LCD panel as a standalone monitor via 
 
 I have been reverse engineering a 7" LCD panel that I pulled out of a vehicle dashboard, in hopes of using it as a standalone monitor. So far I have mapped every pin on the 45-pin video connector, and the next step is designing and ordering a PCB to drive it.
 
-![panel](docs/images/[photo].jpg)
+![Panel showing red](images/red.jpg)
+![Main wiring](images/main_wiring.jpg)
 
 ## Why I made this
 
