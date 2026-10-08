@@ -30,15 +30,6 @@ From my computer, a HDMI cable will be plugged into a custom PCB, where it is co
 
 Originally, I had tried to search for datasheets available for my panel, but this was to no avail. There is not a single public datasheet available on the internet, which meant I had to reverse engineer it myself entirely. I began by connecting the dashboard's ribbon to one FFC breakout board and the panel's flex to another, with jumper wires between them, so I could probe every pin for continuity and voltage with a multimeter while the panel was running.
 
-<!-- Continue in your own words. Things you did:
-     - logic analysed with a Pico 2 running LogicAnalyzer (gusmanb)
-     - found PCLK, HSYNC, VSYNC, DE and the data lines
-     - the FFC was seated one contact skewed, which gave a wrong pin map until you reseated it and remapped
-     - first Pico test showed a black screen; captured the cluster at wake-up and found the SPI setup commands on 40/41/42
-     - with SPI added the panel lit up, but white looked blue-grey
-     - walk test: lit each data pin alone to identify every colour bit
-     - rewired the Pico onto the top 6 bits of each colour, and white became white -->
-
 ### Pin map (45-pin, 0.5 mm FPC)
 
 Numbers are the breakout board labels.
@@ -59,6 +50,69 @@ Numbers are the breakout board labels.
 | 40 | SPI data (MOSI) | Setup commands |
 | 41 | SPI chip select | Active low |
 | 42 | SPI clock | |
+
+## Wiring (current test setup)
+
+Breakout A = panel side, Breakout B = cluster side. Numbers are the breakout labels.
+
+### Timing and SPI
+
+| Pico 2 | Breakout A | Signal |
+|---|---|---|
+| GP0 | 32 | PCLK |
+| GP1 | 36 | DE |
+| GP2 | 34 | HSYNC |
+| GP27 | 35 | VSYNC |
+| GP28 | — | Not connected (used internally by the Pico) |
+| GP21 | 42 | SPI clock |
+| GP22 | 40 | SPI data (MOSI) |
+| GP26 | 41 | SPI chip select |
+| GND | Ground rail | Ground |
+
+### Colour data (top 6 bits of each colour)
+
+| Colour | Bit | Breakout A | Pico 2 |
+|---|---|---|---|
+| Blue | B2 | 7 | GP5 |
+| Blue | B3 | 8 | GP6 |
+| Blue | B4 | 9 | GP7 |
+| Blue | B5 | 10 | GP8 |
+| Blue | B6 | 11 | GP3 |
+| Blue | B7 | 12 | GP9 |
+| Green | G2 | 16 | GP12 |
+| Green | G3 | 17 | GP13 |
+| Green | G4 | 18 | GP14 |
+| Green | G5 | 19 | GP4 |
+| Green | G6 | 20 | GP15 |
+| Green | G7 | 21 | GP10 |
+| Red | R2 | 25 | GP18 |
+| Red | R3 | 26 | GP19 |
+| Red | R4 | 27 | GP20 |
+| Red | R5 | 28 | GP11 |
+| Red | R6 | 29 | GP16 |
+| Red | R7 | 30 | GP17 |
+
+### Resistors to ground
+
+| Breakout A | Resistor | Why |
+|---|---|---|
+| 3 | [value] | Copies the cluster's 1.5 kΩ pull-down |
+| 5, 6 | 2.2 kΩ each | Blue B0–B1 held low (unused) |
+| 14, 15 | 2.2 kΩ each | Green G0–G1 held low (unused) |
+| 23, 24 | 2.2 kΩ each | Red R0–R1 held low (unused) |
+
+### Cluster to panel (breakout B → breakout A)
+
+| Connection | Purpose |
+|---|---|
+| B4 → A4 | Panel power from the cluster |
+| B38 → A38 | Panel power from the cluster |
+| A1, 2, 13, 22, 31, 33, 37, 44, 45 → ground rail | Panel grounds |
+| B1, 22, 44 → ground rail | Cluster ground |
+| A39, A43 | Left unconnected |
+| 10-pin backlight ribbon | Stays plugged into the cluster |
+
+Power order: cluster on first, then plug in the Pico.
 
 ### Video timing (measured from the cluster)
 
@@ -102,7 +156,23 @@ Currently, I am able to display full-screen solid colours on the panel from the 
 
 ## Firmware
 
-Currently, the Pico code is MicroPython, written and run through Thonny. It generates the timing signals (PCLK, HSYNC, VSYNC, DE) using the Pico's PIO hardware, sends the SPI setup sequence, and controls the red, green and blue bits. The test firmware was written with help from Claude (AI). In the future, it will only be doing the SPI sequence and backlight control on the PCB, as the HDMI-parallel RGB converter will be responsible for the timing and colour bits.
+Currently, the Pico code is MicroPython, written and run through Thonny. It generates the timing signals (PCLK, HSYNC, VSYNC, DE) using the Pico's PIO hardware, sends the SPI setup sequence, and controls the red, green and blue bits. The test firmware was written with help from Claude (AI). In the future, it will only be doing the SPI sequence and backlight control on the PCB, as the HDMI-parallel RGB converter will be responsible for the timing and colour bits. [firmware](Firmware)
+
+## How to flash
+
+1. Holding BOOTSEL, plug in your Pico, and drag the [MicroPython .uf2 file](https://micropython.org/download/RPI_PICO2/) onto the drive that appears.
+2. Open Thonny and choose the Pico as the interpreter, before saving the [firmware](Firmware) file onto the Pico.
+3. Turn on the cluster first, then turn on the Pico. You are done!
+
+## Known issues
+
+* Pins 3, 39 and 43's functions are unknown
+* Exactly what each SPI register does is unknown, but easily replicable
+* Unknown whether the panel needs SPI commands repeated
+* Panel's power and backlight still come from the cluster
+* 10-pin backlight connector hasn't been reverse-engineered yet
+* Pico test driver uses 6 bits per colour, not 8, and can only show solid colours
+* Loose wiring can cause unexpected disconnections
 
 ## Building one yourself
 
