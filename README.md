@@ -215,7 +215,7 @@ Coming once the PCB is finished.
 | **Indicator** | | | | |
 | Green 0805 LED | 1 | <1 | [LCSC C2297](https://www.lcsc.com/product-detail/C2297.html) | Power indicator |
 | 1 kΩ 1% 0805 resistor | 1 | <1 | [LCSC C17513](https://www.lcsc.com/product-detail/C17513.html) | LED current limit |
-| **Total** | | **~120–145** (excl. owned parts and shipping) | | |
+| **Total** | | **~150-175** (excl. owned parts and shipping) | | |
 
 ## Credits & references
 
