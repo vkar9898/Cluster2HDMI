@@ -31,10 +31,12 @@ After contemplating, I decided to logic analyse again, on a fresh afternoon, wit
 
 And it did! The LCD glowed a blue-grey, signalling that there it was missing some green and most of its red. I decided to run a walk test with the slider tool, lighting one data pin at a time and noting its colour and brightness, which showed the strongest bits of each colour were the ones held low by resistors. I replaced six Pico wires off the weakest bits and onto the strongest bits, and moved the resistors onto the weakest bits, and I got all 3, red, green and blue! I was able to show a few different colours on the LCD, primarily red, green, blue, black, white, grey, cyan, magenta, and yellow. This was a huge win, so I decided to again call it a day, and proceed with the 10-pin connector another day.
 
+<img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/Blue.jpg" width="400">
+
+**Total time spent: 5 hours**
+
 # October 9: 10-pin connector testing, beginning to start designing
 
 Began testing the 10-pin connector for continuity and overall voltage. Found that pin 1, 4, 7, 10 are most likely unused (no continuity, no voltages, maybe sends signals back to the cluster?), 8, 9 function as LED + (~22.5V), 3, 5 and 6 are LED- (3V), and 2 is ground. Currently thinking about how I design my own HDMI to parallel RGB adapter, using the TFP401APZPR microchip.
 
-<img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/Blue.jpg" width="400">
-
-**Total time spent: 5 hours**
+<img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/testing_oct9.jpg" width="400">
