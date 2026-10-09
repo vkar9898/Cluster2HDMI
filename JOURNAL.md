@@ -35,8 +35,16 @@ And it did! The LCD glowed a blue-grey, signalling that there it was missing som
 
 **Total time spent: 5 hours**
 
-# October 9: 10-pin connector testing, beginning to start designing
+# October 9: 10-pin connector testing, beginning to start designing custom PCB
 
-Began testing the 10-pin connector for continuity and overall voltage. Found that pin 1, 4, 7, 10 are most likely unused (no continuity, no voltages, maybe sends signals back to the cluster?), 8, 9 function as LED + (~22.5V), 3, 5 and 6 are LED- (3V), and 2 is ground. Currently thinking about how I design my own HDMI to parallel RGB adapter, using the TFP401APZPR microchip.
+Began testing the 10-pin connector for continuity and overall voltage. Found that pin 1, 4, 7, 10 are most likely unused (no continuity, no voltages, maybe sends signals back to the cluster?), 8, 9 function as LED + (~22.5V), 3, 5 and 6 are LED- (3V), and 2 is ground. The cluster reboots if the 10-pin isn't connected, so it probably has upstream and downstream pins. Currently thinking about how I design my own HDMI to parallel RGB adapter, using the TFP401APZPR microchip.
+
+Picked out parts for my PCBA, and checked each LCSC number to ensure it's compatible with JLCPCB. Installed KiCad10 and easyeda2kicad, and imported some symbols and footprints from LCSC with it. Places teh wrong chip first, then swapped it for the right one, as the library path was wrong, so I had to import the footprint library manually.
+
+Setup the TFP401, it's power, the 45-pin panel connector, HDMI input, EDID, and Pico 2 in a schematic. PCB design coming soon. Encountered some minor errors in KiCad, but fixed them easily.
+Recording: https://lapse.hackclub.com/timelapse/lRLIcTCkxbhM (can't add two lapse files to Forge)
 
 <img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/testing_oct9.png" width="400">
+<img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/schematic.png" width="400">
+
+**Total time spent: 4 hours**
