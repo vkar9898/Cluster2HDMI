@@ -39,4 +39,4 @@ And it did! The LCD glowed a blue-grey, signalling that there it was missing som
 
 Began testing the 10-pin connector for continuity and overall voltage. Found that pin 1, 4, 7, 10 are most likely unused (no continuity, no voltages, maybe sends signals back to the cluster?), 8, 9 function as LED + (~22.5V), 3, 5 and 6 are LED- (3V), and 2 is ground. Currently thinking about how I design my own HDMI to parallel RGB adapter, using the TFP401APZPR microchip.
 
-<img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/testing_oct9.jpg" width="400">
+<img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/testing_oct9.png" width="400">
