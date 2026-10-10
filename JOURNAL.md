@@ -1,4 +1,4 @@
----
+<img width="1906" height="1005" alt="image" src="https://github.com/user-attachments/assets/02d9b382-ab21-4f5c-a1c9-bf347705bac9" />---
 title: "Cluster2HDMI"
 author: "vkar9898"
 description: "A project dedicated to utilising a 7 inch LCD panel from a car dashboard as a standalone monitor via a HDMI-parallel RGB converter and a Pico 2 fitted on a custom PCB."
@@ -58,5 +58,7 @@ Measured the LCD panel, and decided to build the board same width as it but a li
 Next was deciding what placement to do, I decided to put HDMI socket on the top edge with the TFP401 under it. This minimises travel between the HDMI and the TFP401, and is also easy to me as I have a HDMI cable with a twisting mechanism. The Pico 2 will be placed in a socket top-right, USB pointing at the right edge (for coding). Figured the PSU would be nicest to be on the bottom right, and so its from the panels face, rather than an edge.
 
 I ran into a few problems here too, mostly regarding pin orders and mirroring, specifically the HDMI socket's pins being mirrored relative to the TFP401's, to which the fix was copying Adafruit's TFP board: two pairs loop around under the socket, and two pairs swap over using vias. The 28 colour/sync/clock wires were also mirrored, which meant they'd have to cross over using vias through the bottom layer. 
+
+<img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/oct10pcb.png" width="400">
 
 **Total time spent: 4 hours**
