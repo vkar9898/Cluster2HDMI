@@ -48,3 +48,15 @@ Recording: https://lapse.hackclub.com/timelapse/lRLIcTCkxbhM (can't add two laps
 <img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/schematic.png" width="400">
 
 **Total time spent: 4 hours**
+
+# October 10: Finishing off PCB designing
+
+Figured out how many layers to use on my board, decided to do 4 layers to allow for high speed HDMIS to pass through, with layers top/gnd/pwr/bottom. Calculated track width and gap for the HDMI pairs, worked out with JLC's impedance calculater (100 ohms), and set out a rule set for normal signals, power, and HDMI to make sure everything would work. 
+
+Measured the LCD panel, and decided to build the board same width as it but a little shorter, to allow for a case later. The PCB will use two screws that are available on the current LCD, and allows the 45-pin pannel connector to slide in nicely, and the 10-pin connector to slide in well. Printed the PCB on paper to double-check everything lines up, everything did.
+
+Next was deciding what placement to do, I decided to put HDMI socket on the top edge with the TFP401 under it. This minimises travel between the HDMI and the TFP401, and is also easy to me as I have a HDMI cable with a twisting mechanism. The Pico 2 will be placed in a socket top-right, USB pointing at the right edge (for coding). Figured the PSU would be nicest to be on the bottom right, and so its from the panels face, rather than an edge.
+
+I ran into a few problems here too, mostly regarding pin orders and mirroring, specifically the HDMI socket's pins being mirrored relative to the TFP401's, to which the fix was copying Adafruit's TFP board: two pairs loop around under the socket, and two pairs swap over using vias. The 28 colour/sync/clock wires were also mirrored, which meant they'd have to cross over using vias through the bottom layer. 
+
+**Total time spent: 4 hours**
