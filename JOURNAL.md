@@ -63,6 +63,16 @@ I ran into a few problems here too, mostly regarding pin orders and mirroring, s
 
 **Total time spent: 4 hours**
 
-# October 11: Finished PCB designing
+# October 11: Finished PCB designing, and case designing.
 
-Finally finished designing the PCB!
+Began wiring all the components in the PCB editor. Wired up U1 power and decoupling, the DVDD island on PWR, the OVDD copper area under U1 on the bottom, and the panel connector's GND and 3.3V pins. Wired Pico lines (SPI sequence), EDID chip, DC jack, fuses, diodes, etc. Initially the 12V track to the 3.3V regulator was walled off, so I deleted it and redid on the bottom layer with vias (vias were required for the HDMI-TPS and TPS-45 pin connector).
+
+Exported the Gerber files, with drill files, and make the board 128x55 to fit well against the LCD panel. Generated BOM and placement file form the board, C24 was out of stock, swapped for the C7469965, an identical capacitor. The Pico sockets were also out of stock, so they're set to do not place in JLC, I'll hand solder them.
+
+Picked Onshape for designing the case, because it is simple, and supports STEP. Exported board from KiCad as STEP, imported it, made all parts composite, and noticed an issue: the DC jack hung under the board in Onshape.
+<img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/issue.png" width="400">
+Rectified it by swapping the KiCad model from a .wrl model to a .step model with a different offset. This worked
+
+Case plan: Mount to the LCD panels two top screw holes, and have the case be a triangular prism of some sorts, so that the LCD is naturally tilted back a little, with the case supporting it, to prevent it tipping forward.
+
+**Total time spent: 2 hours**
