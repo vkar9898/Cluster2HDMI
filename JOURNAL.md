@@ -1,4 +1,3 @@
-<img width="1906" height="1005" alt="image" src="https://github.com/user-attachments/assets/02d9b382-ab21-4f5c-a1c9-bf347705bac9" />---
 title: "Cluster2HDMI"
 author: "vkar9898"
 description: "A project dedicated to utilising a 7 inch LCD panel from a car dashboard as a standalone monitor via a HDMI-parallel RGB converter and a Pico 2 fitted on a custom PCB."
@@ -62,3 +61,7 @@ I ran into a few problems here too, mostly regarding pin orders and mirroring, s
 <img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/oct10pcb.png" width="400">
 
 **Total time spent: 4 hours**
+
+# October 11: Finished PCB designing
+
+Finally finished designing the PCB!
