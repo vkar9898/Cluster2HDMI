@@ -1,3 +1,4 @@
+---
 title: "Cluster2HDMI"
 author: "vkar9898"
 description: "A project dedicated to utilising a 7 inch LCD panel from a car dashboard as a standalone monitor via a HDMI-parallel RGB converter and a Pico 2 fitted on a custom PCB."
