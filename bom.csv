@@ -1,6 +1,6 @@
 Item,Qty,Unit cost (USD),Total (USD),Link,Notes
 "Cluster2HDMI PCB - JLCPCB 4-layer, 1.6 mm, HASL, JLC04161H-7628",5,,29.40,https://jlcpcb.com,"$25.00 engineering fee + $4.40 boards. Gerbers in Fabrication/gerbers.zip"
-"Cluster2HDMI assembly - JLCPCB Economic PCBA, top side",2,,97.14,https://jlcpcb.com,"37 part lines (TFP401A, bucks, backlight driver, EDID EEPROM, connectors, passives) incl. $49.44 extended-parts fees. Full list with LCSC numbers: Fabrication/Cluster2HDMI_BOM_JLC_v2.csv"
+"Cluster2HDMI assembly - JLCPCB Economic PCBA, top side",2,,97.14,https://jlcpcb.com,"37 part lines (TFP401A, bucks, backlight driver, EDID EEPROM, connectors, passives) incl. $49.44 extended-parts fees. Full list with LCSC numbers: KiCad/Fabrication/Cluster2HDMI_BOM_JLC_v2.csv"
 JLCPCB shipping - Global Standard Direct Line,1,,7.21,https://jlcpcb.com,Cheapest option to Australia
 Australian GST on JLCPCB order (10%),1,,13.38,https://jlcpcb.com,"Estimate: 10% of (126.54 + 7.21). Replace with the checkout figure"
 "Pin socket, 2.54 mm, 1x20 female",2,FILL IN,FILL IN,https://www.aliexpress.com/w/wholesale-2.54mm-1x20-female-header.html,"J1/J2, hand-soldered, the Pico 2 plugs into these"
