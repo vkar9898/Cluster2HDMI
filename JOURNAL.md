@@ -63,7 +63,7 @@ I ran into a few problems here too, mostly regarding pin orders and mirroring, s
 
 **Total time spent: 4 hours**
 
-# October 11: Finished PCB designing, and case designing.
+# October 11: Finished PCB designing, and started case designing.
 
 Began wiring all the components in the PCB editor. Wired up U1 power and decoupling, the DVDD island on PWR, the OVDD copper area under U1 on the bottom, and the panel connector's GND and 3.3V pins. Wired Pico lines (SPI sequence), EDID chip, DC jack, fuses, diodes, etc. Initially the 12V track to the 3.3V regulator was walled off, so I deleted it and redid on the bottom layer with vias (vias were required for the HDMI-TPS and TPS-45 pin connector).
 
@@ -78,5 +78,19 @@ Rectified it by swapping the KiCad model from a .wrl model to a .step model with
 Case plan: Mount to the LCD panels two top screw holes, and have the case be a triangular prism of some sorts, so that the LCD is naturally tilted back a little, with the case supporting it, to prevent it tipping forward.
 
 Started working on the case, already got some decent progress, more tomorrow
+
+**Total time spent: 2 hours**
+
+# October 12: Finished case designing + wrote finalised code
+
+Continued case designing, and finished it, using FreeCad, as I found it rather easy to learn. Chose M2 screw holes, as it matches what the LCD panel has, and wrote a bit of finalised code for the SPI sequence.
+
+Case design: A wedge sort of thing, almost like a triangular prism, made to keep the LCD panel at a 5 degree angle, to ensure it doesn't tip forward. Will be 3d printed at home, however will require the exact screws. Included a hole on the top for the HDMI port (minimises travel distance between HDMI pins and TFP401), and one on the back face of the case, for the DC plug in jack. The pico will be programmed with the case taken off.
+
+Coding: With the help of Claude, wrote a microPython script by myself (with help of AI) to send the proper SPI sequence, EDID memory, etc. Also added a variable to change based on what Windows should pick the monitor up as, currently the placeholder is Cluster2HDMI.
+
+Now, all that awaits is ordering the PCB, hopefully with Forge funding, and seeing if it works!
+
+<img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/case2.png" width="400">
 
 **Total time spent: 2 hours**
