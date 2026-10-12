@@ -77,4 +77,6 @@ Rectified it by swapping the KiCad model from a .wrl model to a .step model with
 
 Case plan: Mount to the LCD panels two top screw holes, and have the case be a triangular prism of some sorts, so that the LCD is naturally tilted back a little, with the case supporting it, to prevent it tipping forward.
 
+Started working on the case, already got some decent progress, more tomorrow
+
 **Total time spent: 2 hours**
