@@ -23,11 +23,11 @@ This panel comes from an Audi Q7 instrument cluster (dashboard). Prior to this, 
 
 ## What it does
 
-In the end, I aim to have this work as a standalone monitor, working via converting HDMI to parallel RGB, with a 12V PSU powering both the panel and its backlight, and rerouting specific pins to the panel, in order to make it work.
+This is a standalone monitor, made from a 3d printed case, a custom PCBA, and a reverse-engineered 7 inch LCD panel from an Audi Q7 4M cluster
 
 ## How it works
 
-From my computer, a HDMI cable will be plugged into a custom PCB, where it is converted to parallel RGB, before the video-specific pins (RGB, HSYNC, VSYNC, PCLK, etc.) will be routed to the correct pins connected to the panel. A Pico 2 will replicate the SPI setup commands the dashboard originally sends to the panel, and control the backlight brightness. The 12V supply will also power the panel's logic through a 3.3V regulator, and the backlight through a constant-current LED driver.
+A HDMI cable will be plugged into the case, and after replugging once to ensure the PC recognises the monitor properly, it will function as a secondary monitor, converting HDMI to Parallel RGB on the PCB, via a TFP401 microchip, and sending a specific SPI sequence from a Pico 2 to the LCD.
 
 ## Reverse engineering the panel
 
@@ -157,27 +157,25 @@ HDMI input, into the TFP401 chip, outputting TTL/Parallel RGB, and connects to t
 ### Backlight
 Driven by the 22.5V, with 3 LED strings that return through a 20mA constant-current chip. A MOSFET then switches them with PWM from the Pico for brightness.
 ### Pico 2
-The Pico 2 is responsible for sending the SPI sequence on pins 4, 5 and 6.
+The Pico 2 is responsible for sending the SPI sequence on pins 4-6 of the 45-pin connector, the backlight, and the EDID.
 ### EDID
 A memory chip (AT24C02 EEPROM) on the HDMI's DDC lines. The Pico writes it through a level shifter, and it tells the PC the screens resolution, and monitor name.
 
 ## Firmware
 
-Currently, the Pico code is MicroPython, written and run through Thonny. It generates the timing signals (PCLK, HSYNC, VSYNC, DE) using the Pico's PIO hardware, sends the SPI setup sequence, and controls the red, green and blue bits. The test firmware was written with help from Claude (AI). In the future, it will only be doing the SPI sequence and backlight control on the PCB, as the HDMI-parallel RGB converter will be responsible for the timing and colour bits. Code can be found [here](Firmware)
+Currently, the Pico code is MicroPython, written and run through Thonny. It generates the timing signals (PCLK, HSYNC, VSYNC, DE) using the Pico's PIO hardware, sends the SPI setup sequence, and controls the red, green and blue bits. The test firmware was written with help from Claude (AI). In the future, it will only be doing the SPI sequence and backlight control on the PCB, as the HDMI-parallel RGB converter will be responsible for the timing and colour bits. Code can be found [here](Firmware), the file is cluster2hdmi_main.py
 
 ## How to flash
 
 1. Holding BOOTSEL, plug in your Pico, and drag the [MicroPython .uf2 file](https://micropython.org/download/RPI_PICO2/) onto the drive that appears.
 2. Open Thonny and choose the Pico as the interpreter, before saving the [firmware](Firmware) file onto the Pico as "main.py". After this, it'll run automatically on power-up. 
-3. Turn on the cluster first, then turn on the Pico. You are done!
+3. Turn on the Pico 2, and the software should run!
 
 ## Known issues
 
 * Pins 3, 39 and 43's functions are unknown
 * Exactly what each SPI register does is unknown, but easily replicable
 * Unknown whether the panel needs SPI commands repeated
-* Panel's power and backlight still come from the cluster
-* 10-pin backlight connector hasn't been reverse-engineered yet
 * Pico test driver uses 6 bits per colour, not 8, and can only show solid colours
 * Loose wiring can cause unexpected disconnections
 
@@ -215,7 +213,7 @@ All prices in USD (AliExpress prices converted from AUD). Full list with notes: 
 
 - [LogicAnalyzer by gusmanb](https://github.com/gusmanb/logicanalyzer)
 - [Adafruit TFP401 HDMI/DVI decoder](https://www.adafruit.com/product/2219)
-- Claude (AI): helped write the test firmware and decode the logic analyser captures
+- Claude (AI): helped write the test firmware, decode the logic analyser captures, routing the PCB, and aided with designing the case
 
 ## Licence
 
