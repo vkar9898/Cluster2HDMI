@@ -145,7 +145,17 @@ Power order: cluster on first, then plug in the Pico.
 
 ## Hardware
 
-Coming once PCB is designed
+The PCB, overall, converts HDMI input into TTL output with the specific SPI sequence.
+### Video path
+HDMI input, into the TFP401 chip, outputting TTL/Parallel RGB, and connects to the 45-pin connector
+### Power
+12V input, converted to 5, 3.3, and 22.5V, via buck converters and boost converters
+### Backlight
+Driven by the 22.5V input, powering 2 inputs, with 3 LED strings. Brightness is to be controlled via PWM.
+### Pico 2
+The Pico 2 is responsible for sending the SPI sequence on pins 40, 41, and 42.
+### EDID
+A memory chip that tells the source device information about the monitor
 
 ## Firmware
 
@@ -169,7 +179,11 @@ Currently, the Pico code is MicroPython, written and run through Thonny. It gene
 
 ## Building one yourself
 
-Coming once the PCB is finished.
+1. Ordering all required parts: BOM, + specific JLC parts, avaialable in KiCad/
+2. Soldering the 20pin female headers for the Pico 2 is required, as JLC is out of stock of them
+3. Printing the case, case_shell.stl
+4. Putting it together: screwing the PCB to the panel, uploading cluster2hdmi_main.py to the Pico 2 under the name main.py
+5. Powering it up, you should see an additional monitor!
 
 ## Bill of materials
 
