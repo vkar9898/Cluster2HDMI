@@ -1,7 +1,7 @@
 # Cluster2HDMI
 A project dedicated to utilising a 7 inch LCD panel as a standalone monitor via a HDMI-parallel RGB converter and a Pico 2 fitted on a custom PCB
 
-I have been reverse engineering a 7" LCD panel that I pulled out of a vehicle dashboard, in hopes of using it as a standalone monitor. So far I have mapped every pin on the 45-pin video connector, and the next step is designing and ordering a PCB to drive it.
+I have been reverse engineering a 7" LCD panel that I pulled out of a vehicle dashboard, in hopes of using it as a standalone monitor. Currently the final product is ready, only ordering the PCB and 3d-printing the case is left.
 
 <p align="center">
   <img src="images/Red.jpg" width="250">
@@ -11,6 +11,10 @@ I have been reverse engineering a 7" LCD panel that I pulled out of a vehicle da
 
 <p align="center">
   <img src="images/Main wiring.jpg" width="500">
+  <img src="images/pcbfront.png" width="300">
+  <img src="images/pcbback.png" width="300">
+  <img src="images/case1.png" width="300">
+  <img src="images/case2.png" width="300">
 </p>
 
 ## Why I made this
@@ -187,23 +191,25 @@ Currently, the Pico code is MicroPython, written and run through Thonny. It gene
 
 ## Bill of Materials
 
-All prices in USD. Full list with links: [bom.csv](bom.csv). Every part on the PCB (with LCSC numbers) is in [KiCad/Fabrication/Cluster2HDMI_BOM_JLC_v2.csv](KiCad/Fabrication/Cluster2HDMI_BOM_JLC_v2.csv).
+All prices in USD (AliExpress prices converted from AUD). Full list with notes: [bom.csv](bom.csv). Every part on the PCB (with LCSC numbers) is in [KiCad/Fabrication/Cluster2HDMI_BOM_JLC_v2.csv](KiCad/Fabrication/Cluster2HDMI_BOM_JLC_v2.csv).
 
 | Item | Qty | Cost (USD) | Where |
 |---|---|---|---|
 | Cluster2HDMI PCB (4-layer, 1.6 mm, HASL) | 5 | 29.40 | [JLCPCB](https://jlcpcb.com) |
-| PCB assembly (Economic PCBA, all SMD parts + DC jack) | 2 | 97.14 | [JLCPCB](https://jlcpcb.com) |
+| PCB assembly (Economic PCBA) | 2 | 97.14 | [JLCPCB](https://jlcpcb.com) |
 | JLCPCB shipping (Global Standard Direct Line) | 1 | 7.21 | [JLCPCB](https://jlcpcb.com) |
-| GST (10%) | 1 | 13.38 | [JLCPCB](https://jlcpcb.com) |
-| 1x20 2.54 mm female pin socket | 2 | FILL IN | [AliExpress](https://www.aliexpress.com/w/wholesale-2.54mm-1x20-female-header.html) |
-| 12 V 2 A power adapter, 5.5 x 2.1 mm, AU plug | 1 | FILL IN | [AliExpress](https://www.aliexpress.com/w/wholesale-12v-2a-power-adapter-au-plug.html) |
-| M2 x 30 mm screw | 2 | FILL IN | [AliExpress](https://www.aliexpress.com/w/wholesale-m2-30mm-screw.html) |
-| M2 x 8 mm screw | 2 | FILL IN | [AliExpress](https://www.aliexpress.com/w/wholesale-m2-8mm-screw.html) |
-| Slim-plug HDMI cable | 1 | FILL IN | [AliExpress](https://www.aliexpress.com/w/wholesale-slim-hdmi-cable.html) |
-| 3D printed case (PLA) | 1 | FILL IN | - |
+| JLCPCB GST (10%) | 1 | 13.38 | [JLCPCB](https://jlcpcb.com) |
+| 12 V 2 A power adapter (AU plug, 5.5 x 2.1 mm) | 1 | 2.81 | [AliExpress](https://www.aliexpress.com/item/1005010390772322.html) |
+| 1x20 2.54 mm female pin socket (pack of 10) | 1 pack | 1.13 | [AliExpress](https://www.aliexpress.com/item/32852994833.html) |
+| Pin socket shipping | 1 | 1.65 | [AliExpress](https://www.aliexpress.com/item/32852994833.html) |
+| M2 x 30 mm pan head screw (pack of 25) | 1 pack | 2.06 | [AliExpress](https://www.aliexpress.com/item/1005002205244614.html) |
+| M2 x 8 mm pan head screw (pack of 25) | 1 pack | 1.47 | [AliExpress](https://www.aliexpress.com/item/1005002205244614.html) |
+| HDMI cable 2 m | 1 | 3.76 | [AliExpress](https://www.aliexpress.com/item/1005005181822494.html) |
+| PLA filament 1 kg (case uses ~100 g) | 1 | 23.06 | [AliExpress](https://www.aliexpress.com/item/1005007175412873.html) |
+| AliExpress GST (10%) | 1 | 3.59 | [AliExpress](https://www.aliexpress.com) |
 | Raspberry Pi Pico 2 | 1 | owned | [Raspberry Pi](https://www.raspberrypi.com/products/raspberry-pi-pico-2/) |
 | Audi Q7 4M0 920 781 A cluster (LCD panel) | 1 | owned | [eBay](https://www.ebay.co.uk/itm/177800811902) |
-| **Total** | | **FILL IN** (147.13 + the FILL IN lines) | |
+| **Total** | | **186.66** | |
 
 ## Credits & references
 
