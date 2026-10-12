@@ -82,7 +82,7 @@ The cluster repeats the whole set every ~545.6 ms. What each register does is un
 
 ## Current status
 
-Currently, I am able to display full-screen solid colours on the panel from the Pico: red, green and blue, as well as other colours such as cyan, magenta, white, etc. (6 bits per colour). The panel's power and backlight still come from the cluster. Next is to properly power the panel via my own power supply from a custom PCB, and be able to use it as a standalone monitor connected to my computer via HDMI.
+The design is finished, including the PCB, case, and firmware, and is waiting on funding to order and build.
 
 ## Wiring (current test setup)
 
@@ -163,7 +163,7 @@ A memory chip (AT24C02 EEPROM) on the HDMI's DDC lines. The Pico writes it throu
 
 ## Firmware
 
-Currently, the Pico code is MicroPython, written and run through Thonny. It generates the timing signals (PCLK, HSYNC, VSYNC, DE) using the Pico's PIO hardware, sends the SPI setup sequence, and controls the red, green and blue bits. The test firmware was written with help from Claude (AI). In the future, it will only be doing the SPI sequence and backlight control on the PCB, as the HDMI-parallel RGB converter will be responsible for the timing and colour bits. Code can be found [here](Firmware), the file is cluster2hdmi_main.py
+Currently, the Pico code is MicroPython, written and run through Thonny. It generates the timing signals (PCLK, HSYNC, VSYNC, DE) using the Pico's PIO hardware, sends the SPI setup sequence, and controls the red, green and blue bits. The test firmware was written with help from Claude (AI), and is able to send the SPI sequence, turn backlight on, and write the EDID with the correct resolution and monitor name. Code can be found [here](Firmware), the file is cluster2hdmi_main.py. It is still, however, untested, as the PCB hasn't been ordered yet.
 
 ## How to flash
 
