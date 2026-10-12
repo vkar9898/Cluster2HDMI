@@ -1,35 +1,15 @@
-Part,Qty,Est. cost (AUD),Link,Description
-Adafruit TFP401 HDMI/DVI decoder (no touch),1,55,https://www.adafruit.com/product/2219,Converts HDMI to 24-bit parallel RGB
-PCB fabrication + assembly of FPC connectors,1 order,30-50,https://jlcpcb.com,Custom adapter/driver board
-12 V power supply,1,33,https://www.amazon.com.au/dp/B0CRGJ15HS,Main power input
-Raspberry Pi Pico 2,1,owned,https://www.raspberrypi.com/products/raspberry-pi-pico-2/,SPI setup commands + backlight control
-Audi Q7 4M0 920 781 A instrument cluster,1,owned,https://www.ebay.co.uk/itm/177800811902,"Source of the 7"" 800×480 LCD panel"
-Hirose FH34SRJ-45S-0.5SH 45-pin FPC connector,2,5,https://www.lcsc.com/product-detail/C3170034.html,Panel connector
-XUNPU FPC-05FB-40PH20 40-pin FPC connector,2,5,https://www.lcsc.com/product-detail/C2856837.html,TFP401 ribbon connector
-"40-pin 0.5 mm FFC cable, 100 mm, type A",1,5,https://www.lcsc.com/product-detail/C2859463.html,TFP401 board to PCB
-10-pin FPC connector,1,2,,Backlight connector (pitch to be confirmed)
-DC-005 barrel jack,1,1,https://www.lcsc.com/product-detail/C16214.html,12 V input
-BOOMELE 1×20 2.54 mm female header,2,2,https://www.lcsc.com/product-detail/C50984.html,Socket for the Pico 2
-TECHFUSE mSMD110-16V resettable fuse,1,1,https://www.lcsc.com/product-detail/C69691.html,"1.1 A, protects against shorts"
-SS34 Schottky diode,1,1,https://www.lcsc.com/product-detail/C8678.html,Reverse-polarity protection
-TPS54202 buck converter,1,1,https://www.lcsc.com/product-detail/C191884.html,12 V → 5 V for the TFP401 board and Pico
-Sunlord SWPA6045S100MT 10 µH inductor,1,1,https://www.lcsc.com/product-detail/C79272.html,For the buck converter
-100 kΩ 1% 0805 resistor,2,<1,https://www.lcsc.com/product-detail/C149504.html,Buck feedback (top) + MOSFET gate pull-down
-13 kΩ 1% 0805 resistor,1,<1,https://www.lcsc.com/product-detail/C17455.html,"Buck feedback (bottom), sets ~5.18 V"
-AMS1117-3.3 regulator,1,1,https://www.lcsc.com/product-detail/C6186.html,3.3 V for the panel logic
-10 µF 25 V X5R 0805 capacitor,4,<1,https://www.lcsc.com/product-detail/C15850.html,"Buck input ×2, 3.3 V input, panel bypass"
-22 µF 25 V X5R 0805 capacitor,3,<1,https://www.lcsc.com/product-detail/C45783.html,"Buck output ×2, 3.3 V output"
-100 nF 50 V X7R 0805 capacitor,3,<1,https://www.lcsc.com/product-detail/C49678.html,"Buck input bypass, bootstrap, panel bypass"
-TPS61169 LED driver,1,2,https://www.lcsc.com/product-detail/C71045.html,Boost driver for the backlight
-Sunlord SWPA6045S220MT 22 µH inductor,1,1,https://www.lcsc.com/product-detail/C83454.html,For the LED driver
-SS16 Schottky diode,1,1,https://www.lcsc.com/product-detail/C84578.html,For the LED driver
-4.7 µF 25 V X5R 0805 capacitor,1,<1,https://www.lcsc.com/product-detail/C1779.html,LED driver input
-1 µF 50 V X7R 1206 capacitor,1,<1,https://www.lcsc.com/product-detail/C1848.html,LED driver output
-5.1 Ω 1% 0805 resistor,1,<1,https://www.lcsc.com/product-detail/C17724.html,"Sets backlight current (~40 mA, to be confirmed)"
-NSI45020 constant-current regulator,2,2,https://www.lcsc.com/product-detail/C129159.html,One per LED string (may not be needed)
-AO3400A MOSFET,1,1,https://www.lcsc.com/product-detail/C20917.html,PWM dimming (may not be needed)
-1.5 kΩ 1% 0805 resistor,1,<1,https://www.lcsc.com/product-detail/C4310.html,"Pin 3 pull-down, copies the cluster"
-33 Ω 1% 0805 resistor,1,<1,https://www.lcsc.com/product-detail/C17634.html,PCLK series resistor
-Green 0805 LED,1,<1,https://www.lcsc.com/product-detail/C2297.html,Power indicator
-1 kΩ 1% 0805 resistor,1,<1,https://www.lcsc.com/product-detail/C17513.html,LED current limit
-TOTAL,,~150-175 (excl. owned parts and shipping),,
+Item,Qty,Unit cost (USD),Total (USD),Link,Notes
+"Cluster2HDMI PCB - JLCPCB 4-layer, 1.6 mm, HASL, JLC04161H-7628",5,,29.40,https://jlcpcb.com,"$25.00 engineering fee + $4.40 boards. Gerbers in Fabrication/gerbers.zip"
+"Cluster2HDMI assembly - JLCPCB Economic PCBA, top side",2,,97.14,https://jlcpcb.com,"37 part lines (TFP401A, bucks, backlight driver, EDID EEPROM, connectors, passives) incl. $49.44 extended-parts fees. Full list with LCSC numbers: Fabrication/Cluster2HDMI_BOM_JLC_v2.csv"
+JLCPCB shipping - Global Standard Direct Line,1,,7.21,https://jlcpcb.com,Cheapest option to Australia
+Australian GST on JLCPCB order (10%),1,,13.38,https://jlcpcb.com,"Estimate: 10% of (126.54 + 7.21). Replace with the checkout figure"
+"Pin socket, 2.54 mm, 1x20 female",2,FILL IN,FILL IN,https://www.aliexpress.com/w/wholesale-2.54mm-1x20-female-header.html,"J1/J2, hand-soldered, the Pico 2 plugs into these"
+"DC power adapter 12 V 2 A, 5.5 x 2.1 mm plug, centre-positive, AU plug",1,FILL IN,FILL IN,https://www.aliexpress.com/w/wholesale-12v-2a-power-adapter-au-plug.html,Main power input (PJ-044A jack)
+"Screw M2 x 30 mm, pan head",2,FILL IN,FILL IN,https://www.aliexpress.com/w/wholesale-m2-30mm-screw.html,"Back cover to the panel's 2 threaded top holes, holds the whole case together"
+"Screw M2 x 8 mm, pan head",2,FILL IN,FILL IN,https://www.aliexpress.com/w/wholesale-m2-8mm-screw.html,PCB to the back cover standoffs (H1/H2)
+"HDMI cable, slim plug head (under 23 x 13 mm)",1,FILL IN,FILL IN,https://www.aliexpress.com/w/wholesale-slim-hdmi-cable.html,The plug goes 39 mm into the case through the top
+"3D printed case (shell + back cover), PLA",1,FILL IN,FILL IN,,CAD/case_shell.stl + CAD/case_back_cover.stl
+Raspberry Pi Pico 2,1,owned,0.00,https://www.raspberrypi.com/products/raspberry-pi-pico-2/,"Panel SPI setup, backlight, EDID"
+Audi Q7 4M0 920 781 A instrument cluster,1,owned,0.00,https://www.ebay.co.uk/itm/177800811902,"Source of the 800x480 LCD panel"
+JLCPCB subtotal,,,147.13,,PCB + assembly + shipping + GST
+TOTAL,,,FILL IN,,"147.13 + the AliExpress / other lines. Owned parts are $0"
