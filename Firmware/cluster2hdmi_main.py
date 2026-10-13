@@ -1,7 +1,6 @@
 # cluster2hdmi_main.py
-# Raspberry Pi Pico 2 (RP2350) + MicroPython. 
 #
-# Pin map (from the KiCad PCB, J1 = Pico pins 1-20, J2 = Pico pins 21-40)
+# Pin map 
 #   GP4  (pin 6)   EDID_SDA  I2C0 SDA -> PCA9306 -> HDMI DDC / EEPROM
 #   GP5  (pin 7)   EDID_SCL  I2C0 SCL
 #   GP6  (pin 9)   EDID_WE   high = EEPROM write enabled (Q1 pulls WP low)
