@@ -42,7 +42,7 @@ Began testing the 10-pin connector for continuity and overall voltage. Found tha
 Picked out parts for my PCBA, and checked each LCSC number to ensure it's compatible with JLCPCB. Installed KiCad10 and easyeda2kicad, and imported some symbols and footprints from LCSC with it. Places teh wrong chip first, then swapped it for the right one, as the library path was wrong, so I had to import the footprint library manually.
 
 Setup the TFP401, it's power, the 45-pin panel connector, HDMI input, EDID, and Pico 2 in a schematic. PCB design coming soon. Encountered some minor errors in KiCad, but fixed them easily.
-Recording: https://lapse.hackclub.com/timelapse/lRLIcTCkxbhM (can't add two lapse files to Forge)
+Recording: [https://lapse.hackclub.com/timelapse/lRLIcTCkxbhM](https://lapse.hackclub.com/timelapse/1JpNqc92Jzfs) (can't add two lapse files to Forge)
 
 <img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/testing_oct9.png" width="400">
 <img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/schematic.png" width="400">
