@@ -1,7 +1,5 @@
 # Cluster2HDMI
-A project dedicated to utilising a 7 inch LCD panel as a standalone monitor via a HDMI-parallel RGB converter and a Pico 2 fitted on a custom PCB
-
-I have been reverse engineering a 7" LCD panel that I pulled out of a vehicle dashboard, in hopes of using it as a standalone monitor. Currently the final product is ready, only ordering the PCB and 3d-printing the case is left.
+A project that converts a 7" screen from a car dashboard to a standalone monitor.
 
 <p align="center">
   <img src="images/Red.jpg" width="250">
@@ -19,19 +17,19 @@ I have been reverse engineering a 7" LCD panel that I pulled out of a vehicle da
 
 ## Why I made this
 
-This panel comes from an Audi Q7 instrument cluster (dashboard). Prior to this, I was able to control the entire dashboard via the CAN protocol. After that, I had the dream of being able to control the LCD entirely independently. I have always found it interesting reverse engineering things and making them work how I want, so I believed this project would be a great start, and so far it has.
+This screen comes from an Audi Q7 dashboard. Prior to this project, I was able to control the entire dashboard via CAN. After that, I wanted to control the LCD entirely independently, and use it as a standalone monitor. I have always found it interesting to reverse engineering things, so I believed this project would be a great start, and so far it has.
 
 ## What it does
 
-This is a standalone monitor, made from a 3d printed case, a custom PCBA, and a reverse-engineered 7 inch LCD panel from an Audi Q7 4M cluster
+This is a standalone monitor, so it can display graphics or what not connected directly to your PC.
 
 ## How it works
 
-A HDMI cable will be plugged into the case, and after replugging once to ensure the PC recognises the monitor properly, it will function as a secondary monitor, converting HDMI to Parallel RGB on the PCB, via a TFP401 microchip, and sending a specific SPI sequence from a Pico 2 to the LCD.
+A HDMI cable will be plugged into the case, it will function as a secondary monitor, converting HDMI to Parallel RGB on the PCB, via a TFP401 microchip, and sending a  SPI sequence from a Pico 2 to the panel.
 
 ## Reverse engineering the panel
 
-Originally, I had tried to search for datasheets available for my panel, but this was to no avail. There is not a single public datasheet available on the internet, which meant I had to reverse engineer it myself entirely. I began by connecting the dashboard's ribbon to one FFC breakout board and the panel's flex to another, with jumper wires between them, so I could probe every pin for continuity and voltage with a multimeter while the panel was running. Many problems were met here, more in the [journal](JOURNAL.md).
+Originally, I had tried to search for datasheets available for my panel, but couldn't find any. This meant I had to reverse engineer it myself entirely. I began by connecting the dashboard's ribbon to one FFC breakout board and the panel's flex to another, with jumper wires between them, so I could probe every pin for continuity and voltage with a multimeter while the panel was running. Many problems were met here, more in the [journal](JOURNAL.md).
 
 ### Pin map (45-pin, 0.5 mm FPC)
 
@@ -40,16 +38,16 @@ Numbers are the breakout board labels.
 | Label | Function | Notes |
 |---|---|---|
 | 1, 2, 13, 22, 31, 33, 37, 44, 45 | Ground | |
-| 3 | Unknown | 1.5 kΩ pull-down to ground on the cluster side |
-| 4, 38 | Power in | Supplied by the cluster (voltage to be confirmed) |
-| 5–12 | Blue B0–B7 | 5 = least significant bit |
-| 14–21 | Green G0–G7 | 14 = least significant bit |
-| 23–30 | Red R0–R7 | 23 = least significant bit |
+| 3 | Unknown | 1.5 kΩ pull-down to ground |
+| 4, 38 | Power in | 3.3V |
+| 5–12 | Blue B0–B7 | 5 = smallest bit |
+| 14–21 | Green G0–G7 | 14 = smallest bit |
+| 23–30 | Red R0–R7 | 23 = smallest bit |
 | 32 | PCLK | Pixel clock |
 | 34 | HSYNC | |
 | 35 | VSYNC | |
 | 36 | DE | Data enable |
-| 39, 43 | Not connected | Function unknown |
+| 39, 43 | Not connected | Unknown |
 | 40 | SPI data (MOSI) | Setup commands |
 | 41 | SPI chip select | Active low |
 | 42 | SPI clock | |
@@ -59,7 +57,7 @@ Numbers are the breakout board labels.
 | | Value |
 |---|---|
 | Resolution | 800 × 480 |
-| Pixel clock | ~26.8 MHz (cluster), 25 MHz (my Pico driver) |
+| Pixel clock | ~26.8 MHz (cluster), 25 MHz (Pico) |
 | Horizontal | HSYNC 10 px, back porch 6 px, active 800 px, front porch 106 px, total 922 px |
 | Vertical | active 480 lines, front porch 8, VSYNC 4, back porch 8, total 500 lines |
 | Refresh rate | ~58 Hz (cluster), ~54 Hz (Pico) |
@@ -67,8 +65,7 @@ Numbers are the breakout board labels.
 
 ### SPI setup sequence
 
-3-wire SPI, mode 0, MSB first, ~500 kHz, chip select active low.
-Starts ~25 ms after video starts. Without it the panel stays black.
+The sequence that the cluster sends to the panel to 'stay alive', or a gamma/brightness setting. It consists of 3 wires at ~500 kHz. It starts ~25 ms after video starts, and without it the panel stays black.
 
 | Step | Bytes (hex) | Delay after |
 |---|---|---|
@@ -86,7 +83,7 @@ The design is finished, including the PCB, case, and firmware, and is waiting on
 
 ## Wiring (current test setup)
 
-Breakout A = panel side, Breakout B = cluster side. Numbers are the breakout labels.
+Breakout A = panel side, Breakout B = cluster side.
 
 ### Timing and SPI
 
@@ -129,7 +126,7 @@ Breakout A = panel side, Breakout B = cluster side. Numbers are the breakout lab
 
 | Breakout A | Resistor | Why |
 |---|---|---|
-| 3 | 1 kΩ | Stands in for the cluster's 1.5 kΩ pull-down |
+| 3 | 1 kΩ | 1.5 kΩ pull-down |
 | 5, 6 | 2.2 kΩ each | Blue B0–B1 held low (unused) |
 | 14, 15 | 2.2 kΩ each | Green G0–G1 held low (unused) |
 | 23, 24 | 2.2 kΩ each | Red R0–R1 held low (unused) |
@@ -153,17 +150,17 @@ The TFP401 converts HDMI to parallel RGB, and the SPI sequence comes from the Pi
 ### Video path
 HDMI input, into the TFP401 chip, outputting TTL/Parallel RGB, and connects to the 45-pin connector
 ### Power
-12V input, converted to 5, 3.3, and 22.5V, via buck converters and boost converters, with a resettable fuse (F2)
+12V input, converted to 5V, 3.3V, and 22.5V, via buck converters and boost converters, with a resettable fuse (F2)
 ### Backlight
 Driven by the 22.5V, with 3 LED strings that return through a 20mA constant-current chip. A MOSFET then switches them with PWM from the Pico for brightness.
 ### Pico 2
-The Pico 2 is responsible for sending the SPI sequence on pins 4-6 of the 45-pin connector, the backlight, and the EDID.
+SPI sequence on pins 4-6 of the 45-pin connector, the backlight, and the EDID.
 ### EDID
 A memory chip (AT24C02 EEPROM) on the HDMI's DDC lines. The Pico writes it through a level shifter, and it tells the PC the screens resolution, and monitor name.
 
 ## Firmware
 
-Currently, the Pico code is MicroPython, written and run through Thonny. It generates the timing signals (PCLK, HSYNC, VSYNC, DE) using the Pico's PIO hardware, sends the SPI setup sequence, and controls the red, green and blue bits. The test firmware was written with help from Claude (AI), and is able to send the SPI sequence, turn backlight on, and write the EDID with the correct resolution and monitor name. Code can be found [here](Firmware), the file is cluster2hdmi_main.py. It is still, however, untested, as the PCB hasn't been ordered yet.
+Currently, the Pico code is MicroPython, written and run through Thonny. It generates the timing signals (PCLK, HSYNC, VSYNC, DE) using the Pico's PIO hardware, sends the SPI  sequence, and controls the red, green and blue bits. The test firmware was written with help from Claude (AI), and is able to send the SPI sequence, turn backlight on, and write the EDID with the correct resolution and monitor name. Code can be found [here](Firmware), the file is cluster2hdmi_main.py. It is still, however, untested, as the PCB hasn't been ordered yet.
 
 ## How to flash
 
