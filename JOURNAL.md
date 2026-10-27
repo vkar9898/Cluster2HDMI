@@ -94,3 +94,11 @@ Now, all that awaits is ordering the PCB, hopefully with Forge funding, and seei
 <img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/case2.png" width="400">
 
 **Total time spent: 2 hours**
+
+# October 27: Adjusted HDMI-TFP connections 
+
+Upon a suggestion made by a Forge member, I made adjustments to the HDMI-TFP traces. Originally they had many sharp 90 degree bends, with not entirely equal track lengths. I tackled this with the new design, making every turn 45 degrees or less, and adding differential pair skewing.
+
+<img src="https://raw.githubusercontent.com/vkar9898/Cluster2HDMI/main/images/hdmi_fix.png" width="400">
+
+**Total time spent: 0.2 hours**
