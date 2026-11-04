@@ -192,19 +192,19 @@ All prices in USD (AliExpress prices converted from AUD). Full list with notes: 
 |---|---|---|---|
 | Cluster2HDMI PCB (4-layer, 1.6 mm, HASL) | 5 | 29.40 | [JLCPCB](https://jlcpcb.com) |
 | PCB assembly (Economic PCBA) | 2 | 97.14 | [JLCPCB](https://jlcpcb.com) |
-| JLCPCB shipping (Global Standard Direct Line) | 1 | 7.21 | [JLCPCB](https://jlcpcb.com) |
-| JLCPCB GST (10%) | 1 | 13.38 | [JLCPCB](https://jlcpcb.com) |
+| JLCPCB shipping | 1 | 12.07 | [JLCPCB](https://jlcpcb.com) |
+| JLCPCB discount | 1 | -10.00 | [JLCPCB](https://jlcpcb.com) |
+| JLCPCB payment fee (PayPal) | 1 | 0.64 | [JLCPCB](https://jlcpcb.com) |
 | 12 V 2 A power adapter (AU plug, 5.5 x 2.1 mm) | 1 | 2.81 | [AliExpress](https://www.aliexpress.com/item/1005010390772322.html) |
 | 1x20 2.54 mm female pin socket (pack of 10) | 1 pack | 1.13 | [AliExpress](https://www.aliexpress.com/item/32852994833.html) |
 | Pin socket shipping | 1 | 1.65 | [AliExpress](https://www.aliexpress.com/item/32852994833.html) |
 | M2 x 30 mm pan head screw (pack of 25) | 1 pack | 2.06 | [AliExpress](https://www.aliexpress.com/item/1005002205244614.html) |
 | M2 x 8 mm pan head screw (pack of 25) | 1 pack | 1.47 | [AliExpress](https://www.aliexpress.com/item/1005002205244614.html) |
 | HDMI cable 2 m | 1 | 3.76 | [AliExpress](https://www.aliexpress.com/item/1005005181822494.html) |
-| PLA filament 1 kg (case uses ~100 g) | 1 | 23.06 | [AliExpress](https://www.aliexpress.com/item/1005007175412873.html) |
-| AliExpress GST (10%) | 1 | 3.59 | [AliExpress](https://www.aliexpress.com) |
 | Raspberry Pi Pico 2 | 1 | owned | [Raspberry Pi](https://www.raspberrypi.com/products/raspberry-pi-pico-2/) |
 | Audi Q7 4M0 920 781 A cluster (LCD panel) | 1 | owned | [eBay](https://www.ebay.co.uk/itm/177800811902) |
-| **Total** | | **186.66** | |
+| PETG filament (~100 g for the case) | 1 | owned | - |
+| **Total** | | **142.13** | |
 
 ## Credits & references
 
