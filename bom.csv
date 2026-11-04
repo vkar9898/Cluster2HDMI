@@ -6,9 +6,9 @@ JLCPCB discount,1,-10.00,https://jlcpcb.com,Coupon applied at checkout
 JLCPCB payment fee (PayPal),1,0.64,https://jlcpcb.com,From the checkout summary
 "12 V 2 A power adapter, AU plug, 5.5 x 2.1 mm barrel",1,2.81,https://www.aliexpress.com/item/1005010390772322.html,Options: AU Plug + 12V 2A. Free shipping. Main power into the PJ-044A jack
 "Female pin socket 1x20, 2.54 mm (pack of 10)",1 pack,1.13,https://www.aliexpress.com/item/32852994833.html,"J1/J2, hand-soldered, the Pico 2 plugs into these (2 used)"
-Shipping for the pin sockets,1,1.65,https://www.aliexpress.com/item/32852994833.html,"Economy shipping, the only item without free shipping"
-"M2 x 30 mm pan head screw, 304 stainless (pack of 25)",1 pack,2.06,https://www.aliexpress.com/item/1005002205244614.html,Options: M2 25pcs + 30mm. Back cover to the panel's 2 threaded top holes (2 used). Free shipping
-"M2 x 8 mm pan head screw, 304 stainless (pack of 25)",1 pack,1.47,https://www.aliexpress.com/item/1005002205244614.html,Options: M2 25pcs + 8mm. PCB to the back cover posts H1/H2 (2 used). Free shipping
+Shipping for the pin sockets,1,1.65,https://www.aliexpress.com/item/32852994833.html,"Economy shipping"
+"M2 x 30 mm pan head screw, 304 stainless (pack of 25)",1 pack,2.06,https://www.aliexpress.com/item/1005002205244614.html,Options: M2 25pcs + 30mm. Back cover to the panel's 2 threaded top holes. Free shipping
+"M2 x 8 mm pan head screw, 304 stainless (pack of 25)",1 pack,1.47,https://www.aliexpress.com/item/1005002205244614.html,Options: M2 25pcs + 8mm. PCB to the back cover posts H1/H2. Free shipping
 HDMI cable 2 m,1,3.76,https://www.aliexpress.com/item/1005005181822494.html,Option: 2m. PC to the board. Free shipping
 Raspberry Pi Pico 2,1,0.00,https://www.raspberrypi.com/products/raspberry-pi-pico-2/,"Owned. Panel SPI setup, backlight, EDID"
 Audi Q7 4M0 920 781 A instrument cluster,1,0.00,https://www.ebay.co.uk/itm/177800811902,Owned. Source of the 800x480 LCD panel
